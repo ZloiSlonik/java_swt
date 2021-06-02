@@ -3,16 +3,18 @@ package ru.swt.my;
 public class MyFirstProgram {
 
     public static void main(String[] args) {
-       hello("Olga");
+        hello("Olga");
 
-        double start1 = 2;
-        double end1 = 6;
-        double start2 = 40;
-        double end2 = 30;
+        Point point1 = new Point(2, 6);
+        Point point2 = new Point(40, 30);
 
-        System.out.println(Math.sqrt(9));
+        System.out.println("Расстояние между двумя точками: "
+                + "[" + point1.x + ", " + point1.y + "], [" + point2.x + ", " + point2.y + "]" +
+                " равно " + distance(point1, point2));
 
-        System.out.println("Расстояние между двумя точками с координатами " + start1 + "," + end1 + " и " + start2 + "," + end2 + " равно " + Math.sqrt(distance(start1, start2, end1, end2)));
+        System.out.println("Расстояние между двумя точками: "
+                + "[" + point1.x + ", " + point1.y + "], [" + point2.x + ", " + point2.y + "]" +
+                " равно " + point1.distance(point2));
 
     }
 
@@ -20,9 +22,11 @@ public class MyFirstProgram {
         System.out.println("Hello, " + somebody + "!");
     }
 
-    public static double distance(double start1, double start2, double end1, double end2) {
-
-        return (start2-start1)*(start2-start1)+(end2-end1)*(end2-end1);
+    public static double distance(Point start, Point end) {
+        return Math.sqrt(
+                (end.x - start.x) * (end.x - start.x) +
+                        (end.y - start.y) * (end.y - start.y)
+        );
     }
 
 }
