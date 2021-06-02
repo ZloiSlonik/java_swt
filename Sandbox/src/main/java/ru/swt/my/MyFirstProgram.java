@@ -3,31 +3,26 @@ package ru.swt.my;
 public class MyFirstProgram {
 
     public static void main(String[] args) {
-       hello("Lara");
-        hello("Olga");
-        hello("Bubu");
-        double len = 6;
-        double a = 8;
-        double b = 7;
-        System.out.println("Площадь квардарат со стороной " + len + "=" +  area(len));
-        System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area (a,b));
+       hello("Olga");
 
-    }
+        double start1 = 2;
+        double end1 = 6;
+        double start2 = 40;
+        double end2 = 30;
 
-    public static int myFunction(int a, int b) {
-        return a+b;
+        System.out.println(Math.sqrt(9));
+
+        System.out.println("Расстояние между двумя точками с координатами " + start1 + "," + end1 + " и " + start2 + "," + end2 + " равно " + Math.sqrt(distance(start1, start2, end1, end2)));
+
     }
 
     public static void hello(String somebody) {
         System.out.println("Hello, " + somebody + "!");
     }
 
-    public static double area (double l) {
-        return l*l;
-    }
+    public static double distance(double start1, double start2, double end1, double end2) {
 
-    public static double area (double a, double b) {
-        return a*b;
+        return (start2-start1)*(start2-start1)+(end2-end1)*(end2-end1);
     }
 
 }
