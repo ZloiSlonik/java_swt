@@ -19,10 +19,6 @@ public class PersonCreationTest {
     driver = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void testPersonCreation() throws Exception {
     driver.get("http://localhost:8080/addressbook/group.php");
     driver.findElement(By.xpath("//html")).click();
     driver.findElement(By.name("user")).click();
@@ -33,6 +29,11 @@ public class PersonCreationTest {
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
     driver.findElement(By.xpath("//input[@value='Login']")).click();
+  }
+
+  @Test
+  public void testPersonCreation() throws Exception {
+
     driver.findElement(By.linkText("add new")).click();
     driver.findElement(By.name("firstname")).click();
     driver.findElement(By.name("firstname")).clear();
