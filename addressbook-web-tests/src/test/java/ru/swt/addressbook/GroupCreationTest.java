@@ -21,10 +21,6 @@ public class GroupCreationTest {
     driver = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void testGroupCreation() throws Exception {
     driver.get("http://localhost:8080/addressbook/group.php");
     driver.findElement(By.name("user")).click();
     driver.findElement(By.name("user")).clear();
@@ -33,6 +29,11 @@ public class GroupCreationTest {
     driver.findElement(By.name("pass")).clear();
     driver.findElement(By.name("pass")).sendKeys("secret");
     driver.findElement(By.xpath("//input[@value='Login']")).click();
+  }
+
+  @Test
+  public void testGroupCreation() throws Exception {
+
     driver.findElement(By.name("new")).click();
     driver.findElement(By.name("group_name")).click();
     driver.findElement(By.name("group_name")).clear();
