@@ -2,6 +2,7 @@ package ru.swt.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HelperBase {
     protected WebDriver wd;
@@ -18,5 +19,9 @@ public class HelperBase {
         click(locator);
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
+    }
+
+    protected void select(By locator, String value) {
+        new Select(wd.findElement(locator)).selectByVisibleText(value);
     }
 }
