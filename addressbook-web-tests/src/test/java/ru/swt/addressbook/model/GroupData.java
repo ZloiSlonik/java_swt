@@ -1,4 +1,4 @@
-package ru.swt.addressbook;
+package ru.swt.addressbook.model;
 
 public class GroupData {
     private final String name;
