@@ -10,6 +10,7 @@ public class SessionHelper {
 
         this.wd = wd;
     }
+
     public void login(String user, String password) {
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();

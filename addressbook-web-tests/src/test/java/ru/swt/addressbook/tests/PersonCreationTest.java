@@ -8,11 +8,11 @@ public class PersonCreationTest extends TestBase {
  @Test
   public void testPersonCreation() throws Exception {
 
-    app.initPersonCreation();
-    app.fillPersonForm(
+    app.getContactHelper().initPersonCreation();
+    app.getContactHelper().fillPersonForm(
             new PersonData("Alexander", "Petrov", "Test", "Firma666",
                     "test@test.com", "7", "March", "1981"));
-    app.submitPersonCreation();
+    app.getContactHelper().submitPersonCreation();
     app.returnToHomePage();
     app.logout();
   }
