@@ -27,7 +27,7 @@ public class ContactHelper extends HelperBase {
         select(By.name("bmonth"), personData.getBd_month());
         click(By.xpath("//option[@value='" + personData.getBd_month() + "']"));
         type(By.name("byear"), personData.getBd_year());
-        click(By.name("theform"));
+
     }
 
     public void initPersonCreation() {
@@ -38,7 +38,9 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//input[@value='Delete']"));
     }
 
-    public void confirmDeletion() {wd.switchTo().alert().accept();}
+    public void confirmDeletion() {
+        wd.switchTo().alert().accept();
+    }
 
     public void goToContactList() {
         click(By.linkText("home"));
@@ -48,5 +50,14 @@ public class ContactHelper extends HelperBase {
 
         click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
 
+    }
+
+    public void initContactModification() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void submitContactModification() {
+        By qwe = By.name("update");
+        click(qwe);
     }
 }
