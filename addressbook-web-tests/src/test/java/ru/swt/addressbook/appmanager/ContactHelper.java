@@ -57,7 +57,6 @@ public class ContactHelper extends HelperBase {
     }
 
     public void submitContactModification() {
-        By qwe = By.name("update");
-        click(qwe);
+        click(By.name("update"));
     }
 }
