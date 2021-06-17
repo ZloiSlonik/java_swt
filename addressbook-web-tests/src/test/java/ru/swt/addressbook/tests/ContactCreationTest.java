@@ -3,7 +3,7 @@ package ru.swt.addressbook.tests;
 import org.testng.annotations.*;
 import ru.swt.addressbook.model.PersonData;
 
-public class PersonCreationTest extends TestBase {
+public class ContactCreationTest extends TestBase {
 
  @Test
   public void testPersonCreation() throws Exception {
