@@ -36,11 +36,8 @@ public class ApplicationManager {
 
         else if (browser == BrowserType.EDGE) {
             wd = new EdgeDriver();
-
         }
-        //    driver = new ChromeDriver();
-        wd = new FirefoxDriver();
-        wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         wd.get("http://localhost:8080/addressbook/group.php");
         contactHelper = new ContactHelper (wd);
         groupHelper = new GroupHelper(wd);

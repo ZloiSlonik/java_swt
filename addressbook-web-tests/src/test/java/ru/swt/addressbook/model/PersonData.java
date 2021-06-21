@@ -9,8 +9,9 @@ public class PersonData {
     private final String bd_date;
     private final String bd_month;
     private final String bd_year;
+    private String group;
 
-    public PersonData(String first_name, String last_name, String nick_name, String company_name, String email, String bd_date, String bd_month, String bd_year) {
+    public PersonData(String first_name, String last_name, String nick_name, String company_name, String email, String bd_date, String bd_month, String bd_year, String group) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.nick_name = nick_name;
@@ -19,6 +20,7 @@ public class PersonData {
         this.bd_date = bd_date;
         this.bd_month = bd_month;
         this.bd_year = bd_year;
+        this.group = group;
     }
 
     public String getFirst_name() {
@@ -51,5 +53,8 @@ public class PersonData {
 
     public String getBd_year() {
         return bd_year;
+    }
+
+    public String getGroup() { return group;
     }
 }
