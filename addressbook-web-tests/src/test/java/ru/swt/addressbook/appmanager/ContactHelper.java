@@ -51,7 +51,8 @@ public class ContactHelper extends HelperBase {
 
     public void selectContact() {
 
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
+        click(By.name("selected[]"));
+        //click(By.xpath("//table[@id='maintable']/tbody/tr[1]/td/input"));
 
     }
 
@@ -61,5 +62,16 @@ public class ContactHelper extends HelperBase {
 
     public void submitContactModification() {
         click(By.name("update"));
+    }
+
+    public void createContact(PersonData contact, boolean b) {
+       initPersonCreation();
+        fillPersonForm(contact, b);
+       submitPersonCreation();
+       goToContactList();
+       }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
     }
 }
