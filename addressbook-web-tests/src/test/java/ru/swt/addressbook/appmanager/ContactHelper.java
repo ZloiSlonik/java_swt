@@ -74,4 +74,8 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td/input"));
     }
+
+    public int getContactCounter() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
 }
