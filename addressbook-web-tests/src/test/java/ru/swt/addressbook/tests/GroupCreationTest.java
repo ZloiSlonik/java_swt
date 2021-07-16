@@ -1,5 +1,6 @@
 package ru.swt.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.swt.addressbook.model.GroupData;
 
@@ -8,7 +9,10 @@ public class GroupCreationTest extends TestBase {
     @Test
     public void testGroupCreation() throws Exception {
         app.getNavigationHelper().gotoGroupPage();
-        app.getGroupHelper().createGroup(new GroupData("Group2121", "Test23", null));
+        int before = app.getGroupHelper().getGroupCounter();
+        app.getGroupHelper().createGroup(new GroupData("Group16", "Test16", null));
+        int after = app.getGroupHelper().getGroupCounter();
+        Assert.assertEquals(after, before +1);
         app.logout();
     }
 

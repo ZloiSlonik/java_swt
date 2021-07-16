@@ -38,7 +38,7 @@ public class ApplicationManager {
             wd = new EdgeDriver();
         }
         wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        wd.get("http://localhost:8080/addressbook/group.php");
+        wd.get("http://localhost:8080/addressbook");
         contactHelper = new ContactHelper (wd);
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
