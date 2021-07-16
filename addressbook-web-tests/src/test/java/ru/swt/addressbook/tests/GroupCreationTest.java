@@ -3,16 +3,17 @@ package ru.swt.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.swt.addressbook.model.GroupData;
+import java.util.List;
 
 public class GroupCreationTest extends TestBase {
 
     @Test
     public void testGroupCreation() throws Exception {
         app.getNavigationHelper().gotoGroupPage();
-        int before = app.getGroupHelper().getGroupCounter();
-        app.getGroupHelper().createGroup(new GroupData("123", "456", "789"));
-        int after = app.getGroupHelper().getGroupCounter();
-        Assert.assertEquals(after, before +1);
+        List<GroupData> before = app.getGroupHelper().getGroupList();
+        app.getGroupHelper().createGroup(new GroupData("zzz", "yyy", "xxx"));
+        List<GroupData> after = app.getGroupHelper().getGroupList();
+        Assert.assertEquals(after.size(), before.size() +1);
         app.logout();
     }
 
