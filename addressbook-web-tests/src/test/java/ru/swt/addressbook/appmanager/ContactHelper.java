@@ -49,11 +49,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-    public void selectContact() {
-
-        click(By.name("selected[]"));
-        //click(By.xpath("//table[@id='maintable']/tbody/tr[1]/td/input"));
-
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void initContactModification() {

@@ -15,7 +15,7 @@ app.getContactHelper().createContact(new PersonData("User_added", "Lastname_adde
         "test@test.com", "7", "March", "1981", "TestX"), true);
         }
 
-        app.getContactHelper().selectContact();
+        app.getContactHelper().selectContact(before -2);
         app.getContactHelper().initContactDeletion();
         app.getContactHelper().confirmDeletion();
         app.getContactHelper().goToContactList();
